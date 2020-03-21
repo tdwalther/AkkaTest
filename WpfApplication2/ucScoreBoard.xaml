@@ -1,0 +1,221 @@
+﻿<UserControl x:Class="WpfApplication2.ucScoreBoard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApplication2"
+             mc:Ignorable="d" 
+             d:DesignHeight="120" d:DesignWidth="380">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="180" />
+            <ColumnDefinition Width="40" />
+            <ColumnDefinition Width="40" />
+            <ColumnDefinition Width="40" />
+            <ColumnDefinition Width="80" />
+        </Grid.ColumnDefinitions>
+        
+        <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="0" Grid.Row="0" />
+        <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="1" Grid.Row="0" />
+        <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="2" Grid.Row="0" />
+        <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="3" Grid.Row="0" />
+        <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="4" Grid.Row="0" />
+        <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="0" Grid.Row="1" />
+        <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="1" Grid.Row="1" />
+        <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="2" Grid.Row="1" />
+        <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="3" Grid.Row="1" />
+        <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="4" Grid.Row="1" />
+        <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="0" Grid.Row="2" />
+        <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="1" Grid.Row="2" />
+        <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="2" Grid.Row="2" />
+        <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="3" Grid.Row="2" />
+        <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="4" Grid.Row="2" />
+
+        <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center">
+
+            <TextBlock 
+                Text="{Binding TopOrBottom}"                            
+                VerticalAlignment="Center" HorizontalAlignment="Left"
+                Margin="4,0"
+                FontWeight="Bold" FontSize="18" />
+            <TextBlock 
+                Text="{Binding Inning}"                            
+                VerticalAlignment="Center" HorizontalAlignment="Left"
+                FontWeight="Bold" FontSize="18" />
+
+        </StackPanel>
+
+        <TextBlock 
+            Text="{Binding PlayResult}" 
+            Grid.Row="0" Grid.Column="4" 
+            VerticalAlignment="Center" HorizontalAlignment="Center"
+            FontWeight="Bold" FontSize="18"/>
+
+        <TextBlock 
+            Text="R" 
+            Grid.Column="1" Grid.Row="0" 
+            VerticalAlignment="Center" HorizontalAlignment="Center"
+            FontWeight="Bold" FontSize="18"/>
+
+        <TextBlock 
+            Text="H" 
+            Grid.Column="2" Grid.Row="0" 
+            VerticalAlignment="Center" HorizontalAlignment="Center"
+            FontWeight="Bold" FontSize="18"/>
+
+        <TextBlock 
+            Text="E" 
+            Grid.Column="3" Grid.Row="0" 
+            VerticalAlignment="Center" HorizontalAlignment="Center"
+            FontWeight="Bold" FontSize="18"/>
+        
+        
+
+        <TextBlock 
+            Text="{Binding AwayTeam}" 
+            Grid.Column="0" Grid.Row="1" 
+            VerticalAlignment="Center" HorizontalAlignment="Left"
+            Margin="4,0"
+            FontWeight="Medium"  FontSize="18"/>
+
+        <TextBlock 
+            Text="{Binding AwayRuns}" 
+            Grid.Column="1" Grid.Row="1" 
+            VerticalAlignment="Center" HorizontalAlignment="Center"
+            FontWeight="Bold" FontSize="18"/>
+
+        <TextBlock 
+            Text="{Binding AwayHits}" 
+            Grid.Column="2" Grid.Row="1" 
+            VerticalAlignment="Center" HorizontalAlignment="Center"
+            FontWeight="Bold" FontSize="18"/>
+
+        <TextBlock 
+            Text="{Binding AwayErrors}" 
+            Grid.Column="3" Grid.Row="1" 
+            VerticalAlignment="Center" HorizontalAlignment="Center"
+            FontWeight="Bold" FontSize="18"/>
+        
+        <TextBlock 
+            Text="{Binding HomeTeam}" 
+            Grid.Column="0" Grid.Row="2" 
+            VerticalAlignment="Center" HorizontalAlignment="Left"
+            Margin="4,0"
+            FontWeight="Medium"  FontSize="18"/>
+
+        <TextBlock 
+            Text="{Binding HomeRuns}" 
+            Grid.Column="1" Grid.Row="2" 
+            VerticalAlignment="Center" HorizontalAlignment="Center"
+            FontWeight="Bold" FontSize="18"/>
+
+        <TextBlock 
+            Text="{Binding HomeHits}" 
+            Grid.Column="2" Grid.Row="2" 
+            VerticalAlignment="Center" HorizontalAlignment="Center"
+            FontWeight="Bold" FontSize="18"/>
+
+        <TextBlock 
+            Text="{Binding HomeErrors}" 
+            Grid.Column="3" Grid.Row="2" 
+            VerticalAlignment="Center" HorizontalAlignment="Center"
+            FontWeight="Bold" FontSize="18"/>
+        
+        <Canvas 
+            Background="LightGreen" 
+            Margin="2"
+            Grid.Column="4" Grid.Row="1" Grid.RowSpan="2">
+            
+            <Rectangle 
+                Fill="{Binding RunnerOnSecond}" Height="16" Canvas.Left="30" Stroke="Black" Canvas.Top="8" Width="16" RenderTransformOrigin="0.023,0.023">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="45"/>
+                        <TranslateTransform X="9.54" Y="-3.951"/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            
+            <Rectangle 
+                Fill="{Binding RunnerOnFirst}" 
+                Height="16" Canvas.Left="42" Stroke="Black" Canvas.Top="21" Width="16" RenderTransformOrigin="0.023,0.023">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="45"/>
+                        <TranslateTransform X="9.54" Y="-3.951"/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            
+            <Rectangle 
+                Fill="{Binding RunnerOnThird}" 
+                Height="16" Canvas.Left="18" Stroke="Black" Canvas.Top="21" Width="16" RenderTransformOrigin="0.023,0.023">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="45"/>
+                        <TranslateTransform X="9.54" Y="-3.951"/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+
+            <Ellipse 
+                Fill="{Binding Out1}" 
+                Height="8" Canvas.Left="27" Stroke="Black" Canvas.Top="64" Width="8"/>
+
+            <Ellipse 
+                Fill="{Binding Out2}" 
+                Height="8" Canvas.Left="37" Stroke="Black" Canvas.Top="64" Width="8"/>
+
+            <Ellipse 
+                Fill="{Binding Strike1}" 
+                Height="8" Canvas.Left="27" Stroke="Black" Canvas.Top="53" Width="8"/>
+            
+            <Ellipse 
+                Fill="{Binding Strike2}" 
+                Height="8" Canvas.Left="37" Stroke="Black" Canvas.Top="53" Width="8"/>
+            
+
+            <Ellipse 
+                Fill="{Binding Ball1}" 
+                Height="8" Canvas.Left="27" Stroke="Black" Canvas.Top="42" Width="8"/>
+            
+            <Ellipse 
+                Fill="{Binding Ball2}" 
+                Height="8" Canvas.Left="37" Stroke="Black" Canvas.Top="42" Width="8"/>
+            
+            <Ellipse 
+                Fill="{Binding Ball3}" 
+                Height="8" Canvas.Left="47" Stroke="Black" Canvas.Top="42" Width="8"/>
+            
+
+            <TextBlock 
+                Text="Balls" 
+                Canvas.Top="40" Canvas.Left="10" 
+                FontSize="8" />
+            
+            <TextBlock 
+                Text="Strikes" 
+                Canvas.Top="51" Canvas.Left="2" 
+                FontSize="8" />
+
+            <TextBlock 
+                Text="Outs" 
+                Canvas.Top="62" Canvas.Left="9" 
+                FontSize="8" />
+
+        </Canvas>
+        
+    </Grid>
+    
+</UserControl>
