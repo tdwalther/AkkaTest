@@ -16,7 +16,7 @@
             <ColumnDefinition Width="100*" />
         </Grid.ColumnDefinitions>
 
-        <Button Content="Run" Command="{Binding StartupCmd}" Margin="10,0,10,0" />
+        <Button Content="Run" Command="{Binding StartupCmd}" Margin="10,10,10,0" />
         <ListView ItemsSource="{Binding Messages}" Margin="10" Grid.Row="1" Grid.Column="1" FontFamily="Courier New" />
 
         <DataGrid 
